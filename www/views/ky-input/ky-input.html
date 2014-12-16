@@ -1,0 +1,58 @@
+<template>
+    <style>
+        :host {
+            display: block;
+            position: relative;
+            flex-shrink: 0;
+            flex-grow: 1;
+            margin: 1.5em 0.5em;
+            padding: 1em 0.5em;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        label {
+            display: block;
+            position: absolute;
+            font-size: 16px;
+            font-weight: normal;
+            color: #aaa;
+        }
+
+        label.-hide {
+            display: none;
+        }
+
+        input {
+            position: relative;
+            width: 100%;
+            border: none;
+            background: transparent;
+            outline: none;
+            font-family: inherit;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1em;
+        }
+
+        :host([disabled]) {
+            opacity: 0.3;
+        }
+
+        :host(.-hover) #base {
+            background: rgba(255, 255, 255, 0.3);
+            transition: none;
+        }
+
+        :host([block]) {
+            display: block;
+            margin: 1.5em 0.5em;
+        }
+    </style>
+    <label></label>
+    <input type="text">
+</template>
+<script src="ky-input.js"></script>

@@ -1,0 +1,96 @@
+<link rel="import" href="../ky-view/ky-view.html">
+<link rel="import" href="../ky-view-pager/ky-view-pager.html">
+<link rel="import" href="../ky-headerpanel/ky-headerpanel.html">
+<link rel="import" href="../ky-input/ky-input.html">
+<link rel="import" href="../ky-multiinput/ky-multiinput.html">
+<link rel="import" href="../ky-button/ky-button.html">
+<link rel="import" href="../ky-dialog/ky-dialog.html">
+
+<template>
+    <style>
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-chevron-left:before {
+            content: "\f053";
+        }
+
+        h3 {
+            width: 100%;
+            text-align: center;
+        }
+
+        :host {
+            overflow: auto;
+            background: #fcfcfc;
+            box-sizing: border-box;
+        }
+
+        ky-view-pager {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        ky-headerpanel::shadow header {
+            background: #444;
+            color: #fff;
+        }
+
+        ky-button.clear {
+            border: 1px solid #fe680d;
+            background: transparent;
+            color: #fe680d;
+        }
+
+        ky-button.primary {
+            border-style: none;
+            background: #fe680d;
+            color: #fff;
+        }
+
+        .caption {
+            text-align: center;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+    <ky-headerpanel>
+        <ky-button header left id="backBtn">
+            <i class="fa fa-chevron-left"></i>
+        </ky-button>
+        <h3 header center>イベント作成</h3>
+
+        <p class="caption">1.イベントの名前・概要を入力してください</p>
+        <ky-input title="イベントの名前" id="nameInput"></ky-input>
+        <ky-multiinput title="イベントの概要(省略可能)" id="descriptionInput"></ky-multiinput>
+        <ky-button block disabled id="nextBtn" class="primary">次へ</ky-button>
+        <p class="note">ここで入力した内容は、後から変更できます</p>
+    </ky-headerpanel>
+
+    <ky-dialog id="clearDialog">
+        作成中の情報は破棄されてしまいます。<br>
+        よろしいですか？
+        <ky-button block class="primary" id="clearDialogOKBtn">OK</ky-button>
+        <ky-button block class="clear" id="clearDialogCancelBtn">キャンセル</ky-button>
+    </ky-dialog>
+</template>
+<script src="ky-eventcreatetitleview.js"></script>

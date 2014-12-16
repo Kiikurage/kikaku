@@ -1,0 +1,75 @@
+<link rel="import" href="../ky-button/ky-button.html">
+
+<template>
+    <style>
+        :host {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(#fe680d, #ba4b06);
+        }
+
+        ky-view-pager {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        ky-headerpanel::shadow header {
+            background: #444;
+            color: #fff;
+        }
+
+        #loginBtn {
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+        }
+
+        #signupBtn {
+            border: 0 none #fff;
+            background: transparent;
+            color: #fff;
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+
+        ky-button.-hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        ky-input {
+        }
+
+        .caption {
+            color: #fff;
+            text-align: center;
+        }
+
+        #errorMsg {
+            position: relative;
+            color: #fff;
+            text-align: center;
+            height: 2em;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        #errorMsg.-hide {
+            opacity: 0;
+        }
+    </style>
+    <div class="container">
+        <h2 class="caption">
+            イベント企画アプリ(仮)
+        </h2>
+
+        <p class="-hide" id="errorMsg"></p>
+        <ky-input title="メールアドレス" id="emailInput" block></ky-input>
+        <ky-input title="パスワード" id="passwordInput" password block></ky-input>
+        <ky-button block id="loginBtn">ログイン</ky-button>
+        <ky-button block id="signupBtn">アカウントをお持ちでない場合</ky-button>
+    </div>
+</template>
+
+<script src="ky-loginview.js"></script>

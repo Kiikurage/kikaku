@@ -1,0 +1,124 @@
+<link rel="import" href="../ky-button/ky-button.html">
+
+<template>
+    <style>
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-chevron-left:before {
+            content: "\f053";
+        }
+
+        .fa-chevron-right:before {
+            content: "\f054";
+        }
+
+        :host {
+            display: block;
+            position: relative;
+            margin: 1.5em 0.5em;
+        }
+
+        #header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        ky-button {
+            margin: 0;
+            padding: 15px 20px;
+        }
+
+        #title {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        #base {
+            display: block;
+            position: relative;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+
+        .week {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .week:after {
+            display: block;
+            content: " ";
+            clear: both;
+        }
+
+        .date {
+            position: relative;
+            float: left;
+            padding: 15px 10px;
+            margin: 0;
+            width: 14.2857%;
+            border-right: 1px solid #f3f3f3;
+            border-bottom: 1px solid #f3f3f3;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .week:last-child .date {
+            border-bottom-style: none;
+        }
+
+        .date:last-child {
+            border-right-style: none;
+        }
+
+        .date-sunday {
+            color: #f00;
+        }
+
+        .date-saturday {
+            color: #08f;
+        }
+
+        .date-outrange {
+            color: #ccc;
+        }
+
+        .date-selected {
+            background: #ffd18f;
+        }
+    </style>
+    <header id="header">
+        <ky-button id="prev">
+            <i class="fa fa-chevron-left"></i>
+        </ky-button>
+        <span id="title"></span>
+        <ky-button id="next">
+            <i class="fa fa-chevron-right"></i>
+        </ky-button>
+    </header>
+    <div id="base">
+
+    </div>
+</template>
+<script src="ky-calendar.js"></script>

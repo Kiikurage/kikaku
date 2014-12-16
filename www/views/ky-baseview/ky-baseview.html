@@ -1,0 +1,42 @@
+<link rel="import" href="../ky-eventcreatetitleview/ky-eventcreatetitleview.html">
+<link rel="import" href="../ky-eventcreatedateview/ky-eventcreatedateview.html">
+<link rel="import" href="../ky-loginview/ky-loginview.html">
+<link rel="import" href="../ky-signupview/ky-signupview.html">
+<link rel="import" href="../ky-topview/ky-topview.html">
+<link rel="import" href="../ky-eventview/ky-eventview.html">
+<link rel="import" href="../ky-view-pager/ky-view-pager.html">
+<link rel="import" href="../ky-searchuserview/ky-searchuserview.html">
+
+<template>
+    <style>
+        ky-view-pager {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        ky-headerpanel::shadow header {
+            background: #444;
+            color: #fff;
+        }
+
+        ky-button.primary {
+            background: #fe680d;
+            color: #fff;
+        }
+
+        .caption {
+            text-align: center;
+        }
+    </style>
+    <ky-view-pager>
+        <ky-signupview></ky-signupview>
+        <ky-loginview></ky-loginview>
+        <ky-topview></ky-topview>
+        <ky-eventcreatetitleview></ky-eventcreatetitleview>
+        <ky-eventcreatedateview></ky-eventcreatedateview>
+        <ky-eventview></ky-eventview>
+        <ky-searchuserview></ky-searchuserview>
+    </ky-view-pager>
+</template>
+<script src="ky-baseview.js"></script>

@@ -1,0 +1,133 @@
+<link rel="import" href="../ky-button/ky-button.html">
+
+<template>
+    <style>
+        :host {
+            background: #fcfcfc;
+        }
+
+        ky-button.clear {
+            border: 1px solid #fe680d;
+            background: transparent;
+            color: #fe680d;
+        }
+
+        ky-button.primary {
+            border-style: none;
+            background: #fe680d;
+            color: #fff;
+            margin: 0.5em;
+        }
+
+        .caption {
+            text-align: center;
+        }
+
+        .block {
+            display: block;
+            position: relative;
+            margin: 5px 0.5em;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #answerCount:after {
+            display: block;
+            content: ' ';
+            clear: both;
+        }
+
+        .answerCount-cell {
+            display: block;
+            float: left;
+            width: 50%;
+            padding: 10px;
+            border-left: 1px solid #ccc;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .answerCount-cell:first-child {
+            border-left-style: none;
+        }
+
+        .answerCount-label {
+            color: #666;
+            font-size: 0.8em;
+        }
+
+        #answered,
+        #nonanswered {
+            color: #fe680d;
+        }
+
+        #bestDate li {
+            text-align: center;
+        }
+
+        .list {
+            display: block;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .list-header {
+            display: block;
+            position: relative;
+            margin: 0;
+            padding: 5px 10px;
+            width: 100%;
+            font-size: 1em;
+            font-weight: normal;
+            background: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .list li {
+            display: block;
+            padding: 5px 10px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .list li:first-child {
+            border-top-style: none;
+        }
+    </style>
+
+    <ky-button block class="primary">予定を回答する</ky-button>
+    <div id="answerCount" class="block">
+        <div class="answerCount-cell">
+            <span class="answerCount-label">回答済み</span>
+            <span id="answered" class="primary">3人</span>
+        </div>
+        <div class="answerCount-cell">
+            <span class="answerCount-label">未回答</span>
+            <span id="nonanswered" class="primary">1人</span>
+        </div>
+    </div>
+    <div id="bestDate" class="block">
+        <h3 class="list-header">参加者が多い日程</h3>
+        <ul class="list">
+            <li>
+                12月1日
+                <span class="primary">3人</span>
+            </li>
+            <li>
+                12月2日
+                <span class="primary">3人</span>
+            </li>
+            <li>
+                12月3日
+                <span class="primary">3人</span>
+            </li>
+        </ul>
+    </div>
+    <ky-button block>すべての日程を確認する</ky-button>
+
+</template>
+<script src="ky-eventdateview.js"></script>

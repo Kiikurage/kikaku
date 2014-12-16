@@ -1,0 +1,74 @@
+<link rel="import" href="../ky-button/ky-button.html">
+
+<template>
+    <style>
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-2x {
+            font-size: 2em;
+        }
+
+        .fa-plus:before {
+            content: "\f067";
+        }
+
+        :host {
+            background: #fcfcfc;
+        }
+
+        ky-button.clear {
+            border: 1px solid #fe680d;
+            background: transparent;
+            color: #fe680d;
+        }
+
+        ky-button.primary {
+            border-style: none;
+            background: #fe680d;
+            color: #fff;
+            margin: 0.5em;
+        }
+
+        .caption {
+            text-align: center;
+        }
+    </style>
+
+    <ky-button class="primary" block>
+        <i class="fa fa-plus"></i>
+        メンバーを追加する
+    </ky-button>
+    <div id="memberList" class="block">
+        <ul class="list">
+            <li>
+                木倉 悠一郎
+            </li>
+            <li>
+                佐々木 尽
+            </li>
+            <li>
+                戸口 翔太
+            </li>
+            <li>
+                諏崎 貴明
+            </li>
+        </ul>
+    </div>
+
+</template>
+<script src="ky-eventmemberview.js"></script>

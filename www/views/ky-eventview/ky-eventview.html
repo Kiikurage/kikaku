@@ -1,0 +1,141 @@
+<link rel="import" href="../ky-view/ky-view.html">
+<link rel="import" href="../ky-view-pager/ky-view-pager.html">
+<link rel="import" href="../ky-eventhomeview/ky-eventhomeview.html">
+<link rel="import" href="../ky-eventdateview/ky-eventdateview.html">
+<link rel="import" href="../ky-eventmemberview/ky-eventmemberview.html">
+<link rel="import" href="../ky-eventchatview/ky-eventchatview.html">
+<link rel="import" href="../ky-eventshareview/ky-eventshareview.html">
+<link rel="import" href="../ky-headerpanel/ky-headerpanel.html">
+<link rel="import" href="../ky-button/ky-button.html">
+<link rel="import" href="../ky-calendar/ky-calendar.html">
+<link rel="import" href="../ky-dialog/ky-dialog.html">
+
+<template>
+    <style>
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-2x {
+            font-size: 2em;
+        }
+
+        .fa-calendar:before {
+            content: "\f073";
+        }
+
+        .fa-picture-o:before {
+            content: "\f03e";
+        }
+
+        .fa-weixin:before {
+            content: "\f1d7";
+        }
+
+        .fa-chevron-left:before {
+            content: "\f053";
+        }
+
+        .fa-users:before {
+            content: "\f0c0";
+        }
+
+        .fa-home:before {
+            content: "\f015";
+        }
+
+        :host {
+            overflow: auto;
+            background: #fcfcfc;
+            box-sizing: border-box;
+        }
+
+        ky-view-pager {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        ky-headerpanel::shadow header {
+            background: #444;
+            color: #fff;
+        }
+
+        #viewSwitchPanel::shadow header {
+            height: 60px;
+        }
+
+        #viewSwitchPanel::shadow #left,
+        #viewSwitchPanel::shadow #right {
+            display: none;
+        }
+
+        #viewSwitchPanel::shadow #center {
+            background: #fff;
+            padding: 0;
+            height: 60px;
+        }
+
+        #viewSwitchTab {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            position: relative;
+            width: 100%;
+            height: 60px;
+            border-bottom: 1px solid #fe680d;
+            box-sizing: border-box;
+        }
+
+        #viewSwitchTab ky-button {
+            flex-grow: 1;
+            background: #fff;
+            border-radius: 0;
+            border-bottom: 5px solid transparent;
+            color: #ccc;
+            padding: 0;
+        }
+
+        #viewSwitchTab ky-button.-selected {
+            border-bottom-color: #fe680d;
+            color: #fe680d;
+        }
+    </style>
+    <ky-headerpanel>
+        <ky-button header left id="backBtn">
+            <i class="fa fa-chevron-left"></i>
+        </ky-button>
+        <h3 header center id="title"></h3>
+        <ky-headerpanel id="viewSwitchPanel">
+            <nav header center id="viewSwitchTab">
+                <ky-button><i class="fa fa-home fa-2x"></i></ky-button>
+                <ky-button><i class="fa fa-calendar fa-2x"></i></ky-button>
+                <ky-button><i class="fa fa-users fa-2x"></i></ky-button>
+                <ky-button><i class="fa fa-weixin fa-2x"></i></ky-button>
+                <ky-button><i class="fa fa-picture-o fa-2x"></i></ky-button>
+            </nav>
+            <ky-view-pager id="mainPager">
+                <ky-eventhomeview id="homeView"></ky-eventhomeview>
+                <ky-eventdateview id="dateView"></ky-eventdateview>
+                <ky-eventmemberview id="memberView"></ky-eventmemberview>
+                <ky-eventchatview id="chatView"></ky-eventchatview>
+                <ky-eventshareview id="shareView"></ky-eventshareview>
+            </ky-view-pager>
+        </ky-headerpanel>
+    </ky-headerpanel>
+
+</template>
+<script src="ky-eventview.js"></script>

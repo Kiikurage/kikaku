@@ -1,0 +1,20 @@
+{
+    "plugin_search_path": [
+        "/Users/KikuraYuichiro/.nvm/v0.10.32/lib/node_modules/cca/cordova",
+        "/Users/KikuraYuichiro/.nvm/v0.10.32/lib/node_modules/cca/cordova/cordova-plugins"
+    ],
+    "lib": {
+        "android": {
+            "uri": "/Users/KikuraYuichiro/.nvm/v0.10.32/lib/node_modules/cca/cordova/cordova-android",
+            "url": "/Users/KikuraYuichiro/.nvm/v0.10.32/lib/node_modules/cca/cordova/cordova-android"
+        },
+        "ios": {
+            "uri": "/Users/KikuraYuichiro/.nvm/v0.10.32/lib/node_modules/cca/cordova/cordova-ios",
+            "url": "/Users/KikuraYuichiro/.nvm/v0.10.32/lib/node_modules/cca/cordova/cordova-ios"
+        },
+        "www": {
+            "uri": "/Users/KikuraYuichiro/.nvm/v0.10.32/lib/node_modules/cca/templates/default-app",
+            "link": false
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<template>
+    <style>
+        :host {
+            display: block;
+            position: relative;
+            margin: 0.5em;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out;
+        }
+
+        #name {
+            margin: 5px 0;
+        }
+
+        #description {
+            margin: 0;
+            font-size: 0.8em;
+        }
+
+        :host(.-hover) {
+            background: #ffd18f;
+            transition: none;
+        }
+    </style>
+    <h3 id="name"></h3>
+
+    <p id="description"></p>
+</template>
+<script src="ky-eventcard.js"></script>

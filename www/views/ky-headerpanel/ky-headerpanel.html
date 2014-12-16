@@ -1,0 +1,107 @@
+<template>
+    <style>
+        :host {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        header {
+            display: block;
+            position: absolute;
+            height: 50px;
+            width: 100%;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        header ::content h1,
+        header ::content h2,
+        header ::content h3,
+        header ::content h4,
+        header ::content h5,
+        header ::content h6 {
+            font-weight: 500;
+            line-height: 1em;
+        }
+
+        .container {
+            display: flex;
+            position: absolute;
+            flex-direction: row;
+            flex-grow: 0;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        header ::content * {
+            margin: 0;
+        }
+
+        #left {
+            left: 0;
+            width: 50%;
+            justify-content: flex-start;
+        }
+
+        #center {
+            width: 100%;
+            justify-content: center;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #right {
+            right: 0;
+            width: 50%;
+            justify-content: flex-end;
+        }
+
+        #body {
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            flex-grow: 1;
+            flex-shrink: 1;
+            top: 50px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 0;
+            overflow: auto;
+        }
+
+        #inner {
+            display: block;
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+            height: 100%;
+        }
+
+        #inner ::content * {
+            position: relative;
+        }
+    </style>
+    <header>
+        <div id="right" class="container">
+            <content select="*[header][right]"></content>
+        </div>
+        <div id="center" class="container">
+            <content select="*[header][center]"></content>
+        </div>
+        <div id="left" class="container">
+            <content select="*[header][left]"></content>
+        </div>
+    </header>
+    <div id="body">
+        <div id="inner">
+            <content></content>
+        </div>
+    </div>
+</template>
+<script src="ky-headerpanel.js"></script>

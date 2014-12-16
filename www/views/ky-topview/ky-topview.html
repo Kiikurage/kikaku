@@ -1,0 +1,79 @@
+<link rel="import" href="../ky-view-pager/ky-view-pager.html">
+<link rel="import" href="../ky-headerpanel/ky-headerpanel.html">
+<link rel="import" href="../ky-eventcard/ky-eventcard.html">
+<link rel="import" href="../ky-list/ky-list.html">
+
+<template>
+    <style>
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+            src: url('../../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-ellipsis-v:before {
+            content: "\f142";
+        }
+
+        :host {
+            overflow: auto;
+            background: #fcfcfc;
+            box-sizing: border-box;
+        }
+
+        #optionBtn {
+            position: absolute;
+            margin: 0;
+            right: 0;
+        }
+
+        ky-view-pager {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        ky-headerpanel::shadow header {
+            background: #444;
+            color: #fff;
+        }
+
+        ky-button.primary {
+            background: #fe680d;
+            color: #fff;
+        }
+
+        .caption {
+            text-align: center;
+        }
+    </style>
+    <ky-headerpanel id="basePanel">
+        <h3 header center>イベント企画アプリ(仮)</h3>
+
+        <ky-button class="primary" id="createEventBtn">
+            新しいイベントをつくる
+        </ky-button>
+
+        <ky-list id="eventList">
+            <template>
+                <ky-eventcard></ky-eventcard>
+            </template>
+        </ky-list>
+        <div id="eventCardContainer">
+
+        </div>
+
+    </ky-headerpanel>
+</template>
+<script src="ky-topview.js"></script>
